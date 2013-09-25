@@ -1,0 +1,19 @@
+<workflow-app name="pi" xmlns="uri:oozie:workflow:0.4">
+    <start to="pi"/>
+    <action name="pi">
+        <java>
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <main-class>com.test.PiEstimatorKrb</main-class>
+            <arg>${tmpDir}</arg>
+            <arg>${numMaps}</arg>
+            <arg>${numSamples}</arg>
+        </java>
+        <ok to="end"/>
+        <error to="kill"/>
+    </action>
+    <kill name="kill">
+        <message>Action failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+    </kill>
+    <end name="end"/>
+</workflow-app>

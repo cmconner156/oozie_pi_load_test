@@ -1,0 +1,10 @@
+queueName=default
+baseDir=${nameNode}HDFS_LOCATION
+oozie.wf.application.path=${baseDir}/job
+oozie.libpath=${oozie.wf.application.path}/lib
+tmpDir=HDFS_LOCATION/tmp/RAND_INPUT
+oozie.use.system.libpath=true
+numMaps=MAPS
+numSamples=SAMPLES
+jobTracker=JT_URL
+nameNode=NN_URL

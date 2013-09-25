@@ -1,0 +1,8 @@
+This version of PiEstimator supports Kerberos when run as an Oozie Java Action and takes an extra parameter to specify the temp location.  This way you can run multiple instances of the Pi Estimator job at the same time.
+
+To run:
+
+hadoop jar PiEstimatorKrb.jar com.test.PiEstimatorKrb <temp_location> <nMaps> <nSamples>
+
+
+To compile run fix the pom.xml to point at your version of Hadoop and run "mvn clean install".  To run with this Oozie workflow, make sure to copy the new jar to pi_load_test/job/lib.
